@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hou Sheng Chiang</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--Angular-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+	<!--bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			/*iPhone 4 device width*/
+			min-width: 320px;
+		}
+		#logo{
+			height: 25px;
+			padding-left: 7px;
+			padding-right: 7px;
+		}
+		.navbar-brand {
+			display: flex;
+			align-items: center;
+			font-size: 22px;
+		}
+		footer{
+			background-color: #f2f2f2;
+			padding: 17px; 
+			font-size: 16px;
+		}
+		footer ul{
+			list-style-type: none;
+		}
+		.social_icon{
+			width: 28px;
+			margin: 2px 7px 2px 0px;
+			padding-bottom: 7px;
+		}
+	</style>
+</head>
+<body ng-app="myApp">
+<nav class="navbar navbar-default">
+	<div class="container">
+    	<div class="navbar-header">
+    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    			<span class="icon-bar"></span>
+    			<span class="icon-bar"></span>
+    			<span class="icon-bar"></span>
+    		</button>
+    		<a class="navbar-brand" href="#/!"><img id="logo" src="img/WebLogo/Personal Logo.png"> Hou Sheng Chiang</a>
+    	</div>
+		<div class="collapse navbar-collapse navbar-right" id="myNavbar">
+    		<ul class="nav navbar-nav text-center">
+    			<li><a href="#/!">Home</a></li>
+    			<li><a href="#!Experience">Experience</a></li>
+    			<li class="dropdown">
+    				<a class="dropdown-toggle" data-toggle="dropdown">
+    					Certification<span class="caret"></span>
+    				</a>
+    				<ul class="dropdown-menu">
+    					<li><a  href="#!Cert&Edu">Certifications</a></li>
+    					<li><a href="#">Educations</a></li>
+    				</ul>
+    			</li>
+    			<li class="dropdown">
+    				<a class="dropdown-toggle" data-toggle="dropdown">
+    					Porfolio<span class="caret"></span>
+    				</a>
+    				<ul class="dropdown-menu">
+    					<li><a href="#">Web/Application</a></li>
+    					<li><a href="#">Photo Gallergy</a></li>
+    				</ul>
+				</li>
+    			<a href="https://www.paypal.me/HSChiang/" target="_blank" class="btn btn-primary navbar-btn" role="button">Donation</a>
+    		</ul>
+		</div>
+	</div>
+</nav>
+<hr>
+<!-- View Container -->
+<div class="container" ng-view></div>
+<hr>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<ul>
+					<h4>Social Media</h4>
+					<li>
+						<a href="mailto:houshengchiang@gmail.com">
+							<img alt="gmail_Icon" class="social_icon" src="img/gmail_Icon.png">
+							<span>HOUSHENGCHIANG</span>
+						</a>
+
+					</li>
+					<li>
+						<a href="http://www.linkedin.com/in/HouShengChiang" target="_blank">
+							<img alt="Linkedin_Icon" class="social_icon" src="img/Linkedin_Icon.png">
+							<span>HOUSHENGCHIANG</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		<div class="col-sm-6 text-center">
+			<img src="img/WebLogo/Personal Logo.png" style="width: 180px; margin-bottom: 12px;">
+		</div>
+		<div class="col-sm-3">
+			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
+		</div>
+		<div class="col-md-12 text-center" style="margin-top: 25px;">
+			<div>&copy; 2017 Hou Sheng Chiang.</div>
+			<div>All rights reserved.</div>
+		</div>
+	</div>
+</footer>
+
+<script>
+	var app=angular.module("myApp",["ngRoute"]);
+	app.config(function($routeProvider){
+		$routeProvider
+		.when("/", {
+			templateUrl : "AboutMe.html"
+		})
+		.when("/Experience", {
+			templateUrl : "Experience.html"
+		})
+		.when("/Cert&Edu",{
+			templateUrl : "Cert&Edu.html"
+		})
+	})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+Logo background color: #4646c8
+Logo text color: #FFFFFF
+text C font: Rockwell, Bold
+text <> font: Californian FB, Bold
+
+Concept: the endless key developing element
