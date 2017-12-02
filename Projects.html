@@ -1,0 +1,16 @@
+<div class="container-fluid" ng-controller="pCtrl">
+		<img class="img-responsive"src="img/ProjectsBanner.png" style=" width:100%; margin: auto; margin-bottom: 30px;">
+	<div class="row">
+		<div class="col-sm-4 text-center" ng-repeat="x in list">
+			<a ng-href="{{(x.pHref)}}" target="_blank" >
+				<!--Restrict size without overlay in padding-->
+				<div style="overflow: hidden; display: block">
+					<img style="height: 300px;" ng-src="{{(x.pSrc)}}">
+				</div>
+			</a>
+			<h4>{{x.pName}}</h4>
+			<h3 style="margin-top: 0px;"><small>{{x.pDesc}}</small></h3>
+			<hr>
+		</div>
+	</div>
+</div>

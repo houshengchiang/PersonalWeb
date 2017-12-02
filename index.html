@@ -44,8 +44,29 @@
 			padding-bottom: 7px;
 		}
 	</style>
+	<script>
+		var ProjectList = [{
+			"pName" : "Trajectory",
+			"pDesc" : "C# Console App",
+			"pSrc" : "img/Trajectory.png",
+			"pHref" : "https://github.com/WebDevBootCampFall2017/Trajectory",
+			"pDate" : ""
+		},{
+			"pName" : "Text Editor",
+			"pDesc" : "C# Windows Form",
+			"pSrc" : "img/Text_Editor.png",
+			"pHref" : "https://github.com/WebDevBootCampFall2017/Text-Editor-HS",
+			"pDate" : ""
+		},{
+			"pName" : "Blog",
+			"pDesc" : "HTML5 CSS",
+			"pSrc" : "img/DaiwanBlog_Preview.png",
+			"pHref" : "https://webdevbootcampfall2017.github.io/HS_Project3/index.html",
+			"pDate" : ""
+		}]
+</script>
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="webCtrl">
 <nav class="navbar navbar-default">
 	<div class="container">
     	<div class="navbar-header">
@@ -74,12 +95,20 @@
     					Porfolio<span class="caret"></span>
     				</a>
     				<ul class="dropdown-menu">
-    					<li><a href="#">Web/Application</a></li>
-    					<li><a href="#">Photo Gallergy</a></li>
+    					<li><a href="#!Projects">Web/Application</a></li>
+    					<li><a href="#!Gallery">Photo Gallery</a></li>
     				</ul>
 				</li>
     			<a href="https://www.paypal.me/HSChiang/" target="_blank" class="btn btn-primary navbar-btn" role="button">Donation</a>
-    		</ul>
+
+			</ul>
+			<!--Donation Form-->
+			<form class="navbar-form navbar-left form-inline text-center" target="_blank">
+				<div class="form-group">
+					<input type="number" step="0.01" ng-model="dAmount" class="form-group" placeholder="Donation $USD">
+					<button ng-click="re()" class="btn btn-sm btn-primary">Donate</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </nav>
@@ -123,6 +152,7 @@
 
 <script>
 	var app=angular.module("myApp",["ngRoute"]);
+
 	app.config(function($routeProvider){
 		$routeProvider
 		.when("/", {
@@ -131,10 +161,35 @@
 		.when("/Experience", {
 			templateUrl : "Experience.html"
 		})
-		.when("/Cert&Edu",{
+		.when("/Cert&Edu", {
 			templateUrl : "Cert&Edu.html"
 		})
+		.when("/Projects", {
+			templateUrl : "Projects.html",
+			controller : "pCtrl"
+		})
+		.when("/Gallery", {
+			templateUrl : "Gallery.html"
+			
+		})
 	})
+
+	app.controller ('webCtrl', function($scope, $location){
+		
+		var amount = $scope.dAmount;
+		$scope.re = function(){
+			if ($scope.dAmount == undefined){
+				alert("Please enter in currency format");
+				return;
+			}else
+			window.open("https://www.paypal.me/HSChiang/" + $scope.dAmount)
+		}
+	});
+
+	app.controller('pCtrl', function($scope,$location){
+		$scope.list =  ProjectList;
+	})
+
 </script>
 
 </body>
