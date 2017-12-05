@@ -1,16 +1,45 @@
-<div class="container-fluid" ng-controller="pCtrl">
-		<img class="img-responsive"src="img/ProjectsBanner.png" style=" width:100%; margin: auto; margin-bottom: 30px;">
+<!--Banner-->
+<div style="margin-bottom: 2%; background-image: url(img/ProjectsBanner.png); background-repeat:no-repeat; background-position:center; background-size: cover; height: 15vh;">
+
+</div>
+<hr>
+<div class="container" ng-controller="pCtrl">
 	<div class="row">
-		<div class="col-sm-4 text-center" ng-repeat="x in list">
-			<a ng-href="{{(x.pHref)}}" target="_blank" >
-				<!--Restrict size without overlay in padding-->
-				<div style="overflow: hidden; display: block">
+		<div class="col-sm-4 text-center" ng-repeat="x in plist">
+			<!--Restrict size without overlay in padding-->
+			<div style="overflow: hidden; display: block">
+				<a ng-href="{{(x.pHref)}}" target="_blank" >
 					<img style="height: 300px;" ng-src="{{(x.pSrc)}}">
-				</div>
-			</a>
+				</a>
+			</div>
 			<h4>{{x.pName}}</h4>
 			<h3 style="margin-top: 0px;"><small>{{x.pDesc}}</small></h3>
 			<hr>
+		</div>
+	</div>
+	<img class="img-responsive" src="" alt="3D/Interior Design" style="width: 100%; margin: auto; margin-bottom: 30px;">
+	<div class="row text-center" style="">
+		<div class="col-sm-4">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/edqwV4_Lk9g"></iframe>
+			</div>
+			<h4>224-61 Building</h4>
+			<h4><small>SketchUp</small></h4>
+			<h5><small>May 18, 2011</small></h5>
+		</div>
+		<div class="col-sm-4">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/idvz7jqPMaw"></iframe>
+			</div>
+			<h4>224-61 Living Room</h4>
+			<h4><small>SketchUp Vray(Plug-in) Lightning Practice</small></h4>
+			<h5><small>May 16, 2011</small></h5>
+		</div>
+		<div class="col-sm-4">
+			<img class="img-responsive" src="img/Pingdong.jpg">
+			<h4>House. Pingdong, Taiwan</h4>
+			<h4><small>Lightning Practice</small></h4>
+			<h5><small>Mar 16, 2011</small></h5>
 		</div>
 	</div>
 </div>

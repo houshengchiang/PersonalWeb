@@ -1,0 +1,87 @@
+		var ProjectList = [{
+			"pName" : "Trajectory",
+			"pDesc" : "C# Console App",
+			"pSrc" : "img/Trajectory.png",
+			"pHref" : "https://github.com/WebDevBootCampFall2017/Trajectory",
+			"pDate" : ""
+		},{
+			"pName" : "Text Editor",
+			"pDesc" : "C# Windows Form",
+			"pSrc" : "img/Text_Editor.png",
+			"pHref" : "https://github.com/WebDevBootCampFall2017/Text-Editor-HS",
+			"pDate" : ""
+		},{
+			"pName" : "Blog",
+			"pDesc" : "HTML5 CSS",
+			"pSrc" : "img/DaiwanBlog_Preview.png",
+			"pHref" : "https://webdevbootcampfall2017.github.io/HS_Project3/index.html",
+			"pDate" : ""
+		}]
+
+		var PictureList = [{
+			"pName" : "1",
+			"pDesc" : "description",
+			"pSrc" : "IMG_1727.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "2",
+			"pDesc" : "description",
+			"pSrc" : "IMG_1743.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "3",
+			"pDesc" : "description",
+			"pSrc" : "IMG_2226.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "4",
+			"pDesc" : "description",
+			"pSrc" : "IMG_2227.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "5",
+			"pDesc" : "description",
+			"pSrc" : "IMG_2722.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "6",
+			"pDesc" : "description",
+			"pSrc" : "IMG_2723.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "7",
+			"pDesc" : "description",
+			"pSrc" : "IMG_3084.png",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "8",
+			"pDesc" : "description",
+			"pSrc" : "IMG_8316.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "9",
+			"pDesc" : "description",
+			"pSrc" : "IMG_8326.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "10",
+			"pDesc" : "description",
+			"pSrc" : "IMG_9616.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		},{
+			"pName" : "6",
+			"pDesc" : "description",
+			"pSrc" : "IMG_9656.jpg",
+			"pHref" : "",
+			"pDate" : ""
+		}]

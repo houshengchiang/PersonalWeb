@@ -1,0 +1,50 @@
+<style>
+	.modal {
+	    display: none; /* Hidden by default */
+	    position: fixed; /* Stay in place */
+	    z-index: 1; /* Sit on top */
+	    padding-top: 100px; /* Location of the box */
+	    left: 0;
+	    top: 0;
+	    width: 100%; /* Full width */
+	    height: 100%; /* Full height */
+	    overflow: auto; /* Enable scroll if needed */
+	    background-color: rgb(0,0,0); /* Fallback color */
+	    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	}
+	/* Modal Content (image) */
+	.modal-content {
+    	margin: auto;
+    	display: block;
+    	width: 80%;
+    	max-width: 700px;
+	}
+</style>
+
+
+
+<div class="container-fluid" ng-controller="gCtrl">
+	<!--
+		<img class="img-responsive" src="img/GalleryBanner.png" style="width:100vw; margin: auto; margin-bottom: 30px;">
+	-->
+	<h2 align="center">Gallery</h2>
+	<hr>
+	<div class="row">
+		<div class="col-sm-4 text-center" ng-repeat="x in glist">
+			<!-- -->
+			<a ng-href="#!PictureViewer">
+					<img id="myImg" class="img-responsive img-thumbnail" style="max-height: 230px; margin: auto" ng-src="img/Album/{{(x.pSrc)}}">
+				
+			</a>
+			<h4>{{x.pName}}</h4>
+			<h3 style="margin-top: 0px;"><small>{{x.pDesc}}</small></h3>
+			<hr>
+		</div>
+		
+	</div>
+</div>
+<div id="myModal" class="modal">
+	<span class="close">&times;</span>
+	<img class="modal-content" id="img01">
+	<div id="caption"></div>
+</div>

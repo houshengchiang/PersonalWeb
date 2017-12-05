@@ -2,11 +2,14 @@
 <html>
 <head>
 	<title>Hou Sheng Chiang</title>
+	<meta charset="utf-8">
+
+	<!--Facebook Preview-->
 	<meta name="description" content="HouSheng's Personal Website 後聖的個人網站"/>
 	<meta property="og:description" content="HouSheng's Personal Website 後聖的個人網站"/>
 	<meta property="og:image" content="img/WebLogo/Personal Logo.png"/>
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-	<meta charset="utf-8">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--Angular-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -15,6 +18,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!--Import Json-->
+	<script src="Lists.json"></script>
+
 	<style type="text/css">
 		body{
 			/*iPhone 4 device width*/
@@ -44,27 +51,7 @@
 			padding-bottom: 7px;
 		}
 	</style>
-	<script>
-		var ProjectList = [{
-			"pName" : "Trajectory",
-			"pDesc" : "C# Console App",
-			"pSrc" : "img/Trajectory.png",
-			"pHref" : "https://github.com/WebDevBootCampFall2017/Trajectory",
-			"pDate" : ""
-		},{
-			"pName" : "Text Editor",
-			"pDesc" : "C# Windows Form",
-			"pSrc" : "img/Text_Editor.png",
-			"pHref" : "https://github.com/WebDevBootCampFall2017/Text-Editor-HS",
-			"pDate" : ""
-		},{
-			"pName" : "Blog",
-			"pDesc" : "HTML5 CSS",
-			"pSrc" : "img/DaiwanBlog_Preview.png",
-			"pHref" : "https://webdevbootcampfall2017.github.io/HS_Project3/index.html",
-			"pDate" : ""
-		}]
-</script>
+
 </head>
 <body ng-app="myApp" ng-controller="webCtrl">
 <nav class="navbar navbar-default">
@@ -103,23 +90,18 @@
 
 			</ul>
 			<!--Donation Form-->
-			<form class="navbar-form navbar-left form-inline text-center" target="_blank">
-				<div class="form-group">
-					<input type="number" step="0.01" ng-model="dAmount" class="form-group" placeholder="Donation $USD">
-					<button ng-click="re()" class="btn btn-sm btn-primary">Donate</button>
-				</div>
-			</form>
+			
 		</div>
 	</div>
 </nav>
 <hr>
 <!-- View Container -->
-<div class="container" ng-view></div>
+<div class="container-fluid" ng-view></div>
 <hr>
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-3" style="">
 				<ul>
 					<h4>Social Media</h4>
 					<li>
@@ -135,21 +117,37 @@
 							<span>HOUSHENGCHIANG</span>
 						</a>
 					</li>
+					<li>
+						<a href="http://www.linkedin.com/in/HouShengChiang" target="_blank">
+							<img alt="Github_Icon" class="social_icon" src="img/Github_Icon.png">
+							<span>HOUSHENGCHIANG</span>
+						</a>
+					</li>
 				</ul>
 			</div>
-		<div class="col-sm-6 text-center">
-			<img src="img/WebLogo/Personal Logo.png" style="width: 180px; margin-bottom: 12px;">
+		<div class="col-sm-6 text-center" style="border-width: 1px; border-style: none solid; ">
+			<img src="img/WebLogo/Personal Logo.png" style="width: 180px; margin: 7px auto;">
 		</div>
 		<div class="col-sm-3">
-			"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
+			<h3 align="center"><u>Donation</u></h3>
+			<p>This is a great method to support building and maintaining the website.</p>
+			<p>Any amount is deeply appreciated.</p>
+			<form class="form-inline" target="_blank">
+				<div class="form-group">
+					<input type="number" step="0.01" ng-model="dAmount" class="form-group" placeholder="Donation $USD" style="max-width: 65%;">
+					<button ng-click="re()" class="btn btn-primary">Donate</button>
+				</div>
+				<h6><i>Redirect to Paypal payment page</i></h6>
+			</form>
 		</div>
-		<div class="col-md-12 text-center" style="margin-top: 25px;">
-			<div>&copy; 2017 Hou Sheng Chiang.</div>
-			<div>All rights reserved.</div>
-		</div>
+		<hr>
 	</div>
-</footer>
 
+</footer>
+	<div class="text-center" style="margin: 17px auto;">
+		<div>&copy; 2017 Hou Sheng Chiang.
+		All rights reserved.</div>
+	</div>
 <script>
 	var app=angular.module("myApp",["ngRoute"]);
 
@@ -170,12 +168,14 @@
 		})
 		.when("/Gallery", {
 			templateUrl : "Gallery.html"
-			
+		})
+		.when("/PictureViewer",{
+			templateUrl : "PictureViewer.html",
+			controller : "pvCtrl"
 		})
 	})
 
 	app.controller ('webCtrl', function($scope, $location){
-		
 		var amount = $scope.dAmount;
 		$scope.re = function(){
 			if ($scope.dAmount == undefined){
@@ -187,7 +187,18 @@
 	});
 
 	app.controller('pCtrl', function($scope,$location){
-		$scope.list =  ProjectList;
+		$scope.plist =  ProjectList;
+	})
+
+	app.controller('gCtrl', function($scope,$location){
+		$scope.glist =  PictureList;	
+	})
+
+	app.controller('pvCtrl', function($scope,$location){
+		$scope.imgView = "";
+		$scope.goBack = function(){
+			window.history.back();
+		}
 	})
 
 </script>
