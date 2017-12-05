@@ -16,6 +16,12 @@
 			"pSrc" : "img/DaiwanBlog_Preview.png",
 			"pHref" : "https://webdevbootcampfall2017.github.io/HS_Project3/index.html",
 			"pDate" : ""
+		},{
+			"pName" : "Tic-Tac-Toc",
+			"pDesc" : "HTML5 CSS JS Angular Application",
+			"pSrc" : "img/ttt.png",
+			"pHref" : "https://webdevbootcampfall2017.github.io/HS_Project4_TicTacToe/",
+			"pDate" : ""
 		}]
 
 		var PictureList = [{
